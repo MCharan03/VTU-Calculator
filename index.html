@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTU Result Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body data-theme="dark">
+
+    <div class="calculator-container">
+        <h1>VTU Result Calculator</h1>
+        <button id="theme-toggle" class="theme-toggle">
+            <svg class="theme-svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <g id="sun"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </g>
+                <g id="moon"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </g>
+            </svg>
+        </button>
+        <div style="display: flex; gap: 24px;">
+            <nav class="nav-bar">
+                <div class="highlighter"></div>
+                <button class="nav-item active" data-page="sgpa">SGPA</button>
+                <button class="nav-item" data-page="cgpa">CGPA</button>
+                <button class="nav-item" data-page="percentage">Percentage</button>
+                
+            </nav>
+
+            <main class="content">
+            <section id="sgpa-page" class="calculator-section">
+                <h2>SGPA Calculator</h2>
+                <div class="input-group">
+                    <label>Enter subjects for this semester:</label>
+                    <div id="sgpa-subjects" class="sgpa-subjects">
+                        <div class="subject-card">
+                            <div class="subject-card-header"><span class="subject-label">Subject 1</span><button class="remove-btn">&times;</button></div>
+                            <div class="subject-inputs"><input type="number" class="credits-input" placeholder="Credits" min="0"><input type="number" class="marks-input" placeholder="Marks (0-100)" min="0"></div>
+                            <div class="error-message credits-error"></div><div class="error-message marks-error"></div>
+                        </div>
+                        <div class="subject-card">
+                            <div class="subject-card-header"><span class="subject-label">Subject 2</span><button class="remove-btn">&times;</button></div>
+                            <div class="subject-inputs"><input type="number" class="credits-input" placeholder="Credits" min="0"><input type="number" class="marks-input" placeholder="Marks (0-100)" min="0"></div>
+                            <div class="error-message credits-error"></div><div class="error-message marks-error"></div>
+                        </div>
+                        <div class="subject-card">
+                            <div class="subject-card-header"><span class="subject-label">Subject 3</span><button class="remove-btn">&times;</button></div>
+                            <div class="subject-inputs"><input type="number" class="credits-input" placeholder="Credits" min="0"><input type="number" class="marks-input" placeholder="Marks (0-100)" min="0"></div>
+                            <div class="error-message credits-error"></div><div class="error-message marks-error"></div>
+                        </div>
+                        <div class="subject-card">
+                            <div class="subject-card-header"><span class="subject-label">Subject 4</span><button class="remove-btn">&times;</button></div>
+                            <div class="subject-inputs"><input type="number" class="credits-input" placeholder="Credits" min="0"><input type="number" class="marks-input" placeholder="Marks (0-100)" min="0"></div>
+                            <div class="error-message credits-error"></div><div class="error-message marks-error"></div>
+                        </div>
+                        <div class="subject-card">
+                            <div class="subject-card-header"><span class="subject-label">Subject 5</span><button class="remove-btn">&times;</button></div>
+                            <div class="subject-inputs"><input type="number" class="credits-input" placeholder="Credits" min="0"><input type="number" class="marks-input" placeholder="Marks (0-100)" min="0"></div>
+                            <div class="error-message credits-error"></div><div class="error-message marks-error"></div>
+                        </div>
+                        <div class="subject-card">
+                            <div class="subject-card-header"><span class="subject-label">Subject 6</span><button class="remove-btn">&times;</button></div>
+                            <div class="subject-inputs"><input type="number" class="credits-input" placeholder="Credits" min="0"><input type="number" class="marks-input" placeholder="Marks (0-100)" min="0"></div>
+                            <div class="error-message credits-error"></div><div class="error-message marks-error"></div>
+                        </div>
+                        <div class="subject-card">
+                            <div class="subject-card-header"><span class="subject-label">Subject 7</span><button class="remove-btn">&times;</button></div>
+                            <div class="subject-inputs"><input type="number" class="credits-input" placeholder="Credits" min="0"><input type="number" class="marks-input" placeholder="Marks (0-100)" min="0"></div>
+                            <div class="error-message credits-error"></div><div class="error-message marks-error"></div>
+                        </div>
+                        <div class="subject-card">
+                            <div class="subject-card-header"><span class="subject-label">Subject 8</span><button class="remove-btn">&times;</button></div>
+                            <div class="subject-inputs"><input type="number" class="credits-input" placeholder="Credits" min="0"><input type="number" class="marks-input" placeholder="Marks (0-100)" min="0"></div>
+                            <div class="error-message credits-error"></div><div class="error-message marks-error"></div>
+                        </div>
+                    </div>
+                    <button class="add-subject-btn">Add Subject</button>
+                </div>
+                <div class="validation-error-message" data-error-for="sgpa"></div>
+                <div class="button-group"><button class="calculate-btn" data-calc="sgpa" disabled>Calculate SGPA</button><button class="clear-btn" data-clear="sgpa">Clear</button></div>
+                <div class="result-box"><h3>Your SGPA: <span id="sgpa-result"></span></h3><button class="print-btn" data-print="sgpa" style="display: none;">Print</button></div>
+            </section>
+
+            <section id="cgpa-page" class="calculator-section">
+                <h2>CGPA Calculator</h2>
+                <div class="input-group">
+                    <label>Enter SGPA for each semester:</label>
+                    <div id="cgpa-semesters" class="cgpa-semesters">
+                        <div class="semester-card">
+                            <div class="subject-card-header"><span class="semester-label">Semester 1</span><button class="remove-btn">&times;</button></div>
+                            <div class="semester-inputs"><input type="number" class="sgpa-input" placeholder="SGPA" step="0.01" min="0" max="10"></div>
+                            <div class="error-message sgpa-error"></div>
+                        </div>
+                        <div class="semester-card">
+                            <div class="subject-card-header"><span class="semester-label">Semester 2</span><button class="remove-btn">&times;</button></div>
+                            <div class="semester-inputs"><input type="number" class="sgpa-input" placeholder="SGPA" step="0.01" min="0" max="10"></div>
+                            <div class="error-message sgpa-error"></div>
+                        </div>
+                    </div>
+                    <button class="add-subject-btn" id="add-semester-btn">Add Semester</button>
+                </div>
+                <div class="validation-error-message" data-error-for="cgpa"></div>
+                <div class="button-group"><button class="calculate-btn" data-calc="cgpa" disabled>Calculate CGPA</button><button class="clear-btn" data-clear="cgpa">Clear</button></div>
+                <div class="result-box"><h3>Your CGPA: <span id="cgpa-result"></span></h3></div>
+            </section>
+
+            <section id="percentage-page" class="calculator-section">
+                <h2>Percentage Converter</h2>
+                <div class="input-group">
+                    <div class="semester-card">
+                        <div class="semester-inputs">
+                            <input type="number" id="cgpa-to-convert" placeholder="Enter your CGPA (e.g., 8.5)" step="0.01" min="0" max="10">
+                        </div>
+                        <div class="error-message cgpa-convert-error"></div>
+                    </div>
+                </div>
+                <div class="validation-error-message" data-error-for="percentage"></div>
+                <div class="button-group"><button class="calculate-btn" data-calc="percentage" disabled>Convert to Percentage</button><button class="clear-btn" data-clear="percentage">Clear</button></div>
+                <div class="result-box"><h3>Your Percentage: <span id="percentage-result"></span></h3></div>
+            </section>
+
+            
+        </main>
+        </div>
+    </div>
+
+    <div id="print-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Print Options</h2>
+            <div class="input-group">
+                <input type="text" id="student-name" placeholder="Your Name">
+                <input type="text" id="student-usn" placeholder="Your USN">
+            </div>
+            <p>How would you like to print your results?</p>
+            <div class="print-options">
+                <div class="highlighter"></div>
+                <button id="credit-wise-btn">Credit-wise</button>
+                <button id="subject-wise-btn">Subject-wise</button>
+            </div>
+            <div id="subject-names-container" style="display: none;">
+                <h3>Enter Subject Names</h3>
+                <!-- Subject name inputs will be dynamically added here -->
+            </div>
+            <button id="confirm-print-btn" style="display: none;">Print</button>
+        </div>
+    </div>
+
+    <div id="print-output"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
