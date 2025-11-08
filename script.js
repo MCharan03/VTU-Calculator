@@ -373,7 +373,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const cgpa = parseFloat(cgpaToConvertInput.value);
         const finalPercentage = (cgpa - 0.75) * 10;
         animateCountUp(percentageResultSpan, finalPercentage);
-        percentageResultSpan.textContent = `${finalPercentage.toFixed(2)}%`;
     });
 
     clearPercentageBtn.addEventListener('click', () => {
